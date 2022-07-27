@@ -1,0 +1,11 @@
+<?php
+                $json = file_get_contents("https://jsonplaceholder.typicode.com/todos");
+                $arreglo = json_decode($json,"false");
+               // print_r($arreglo);
+                
+                echo "<table><thead><tr><td>Num</td><td>Nombre</td><td>Terminado</td></tr></thead><tbody>";
+                foreach($arreglo as $post){
+                    echo "<tr><td>".$post['id']."</td><td>".$post['title']."</td><td>".$post['completed']."</td></tr>";
+                }
+                echo "</tbody></table>";
+                ?>
